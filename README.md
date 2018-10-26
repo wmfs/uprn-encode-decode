@@ -1,2 +1,2 @@
 # uprn-encode-decode
-A package containing methods to encode UPRNs into masking numbers
+A package containing methods to encode UPRNs into masking numbers and decode them back again
