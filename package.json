@@ -4,6 +4,7 @@
   "description": "A package to encode UPRNs into masking numbers, and decode them back again",
   "author": "West Midlands Fire Service",
   "keywords": [],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/wmfs/uprn-encode-decode.git"
