@@ -4,7 +4,7 @@
 const chai = require('chai')
 const expect = chai.expect
 const process = require('process')
-const encode = require('C:\\development\\uprn-encode-decode\\lib\\uprnEncodeDecode.js').encodeUPRN
+const encode = require('../lib/uprnEncodeDecode.js').encodeUPRN
 
 describe('Tests the UPRN encoder', function () {
   this.timeout(process.env.TIMEOUT || 5000)
