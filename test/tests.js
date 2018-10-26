@@ -60,7 +60,7 @@ describe('Tests the UPRN encoder', function () {
     },
     {
       uprn: '10090434308',
-      mask: '4DM7WR82'
+      mask: '4DM7WR92'
     },
     {
       uprn: '100071065698',
@@ -71,7 +71,7 @@ describe('Tests the UPRN encoder', function () {
       mask: '7M375G5W'
     },
     {
-      uprn: '100071311349',
+      uprn: '100071411459',
       mask: '7M379TP7'
     },
     {
