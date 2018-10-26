@@ -92,11 +92,9 @@ describe('Tests the UPRN encoder', function () {
     }
   ]
 
-  for(let i = 0; i < properties.length; i++) {
+  for (let i = 0; i < properties.length; i++) {
     it(`should encode uprn ${properties[i].uprn} into mask ${properties[i].mask}`, async () => {
       expect(encode(properties[i].uprn)).to.eql(properties[i].mask)
     })
   }
 })
-
-
