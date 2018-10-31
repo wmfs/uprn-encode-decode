@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/wmfs/uprn-encode-decode/compare/v1.1.1...v1.1.2) (2018-10-31)
+
+
+### 🐛 Bug Fixes
+
+* missing 'main' in package.json ([8d004b9](https://github.com/wmfs/uprn-encode-decode/commit/8d004b9))
+
 ## [1.1.1](https://github.com/wmfs/uprn-encode-decode/compare/v1.1.0...v1.1.1) (2018-10-31)
 
 
