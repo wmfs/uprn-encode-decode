@@ -1,3 +1,20 @@
+## [1.1.1](https://github.com/wmfs/uprn-encode-decode/compare/v1.1.0...v1.1.1) (2018-10-31)
+
+
+### 🐛 Bug Fixes
+
+* trigger build ([e35e072](https://github.com/wmfs/uprn-encode-decode/commit/e35e072))
+
+
+### 📚 Documentation
+
+* added keywords to package.json ([5d330f0](https://github.com/wmfs/uprn-encode-decode/commit/5d330f0))
+
+
+### ♻️ Chores
+
+* Remove unnecessary comment ([02565bd](https://github.com/wmfs/uprn-encode-decode/commit/02565bd))
+
 # [1.1.0](https://github.com/wmfs/uprn-encode-decode/compare/v1.0.0...v1.1.0) (2018-10-26)
 
 
