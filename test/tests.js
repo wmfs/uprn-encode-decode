@@ -4,8 +4,7 @@
 const chai = require('chai')
 const expect = chai.expect
 const process = require('process')
-const encode = require('../lib/uprnEncodeDecode.js').encodeUPRN
-const decode = require('../lib/uprnEncodeDecode.js').decodeMask
+const { encodeUPRN, decodeMask } = require('../lib')
 
 describe('Tests the UPRN encoder', function () {
   this.timeout(process.env.TIMEOUT || 5000)
@@ -93,15 +92,13 @@ describe('Tests the UPRN encoder', function () {
     }
   ]
 
-  for (let i = 0; i < properties.length; i++) {
-    it(`should encode uprn ${properties[i].uprn} into mask ${properties[i].mask}`, async () => {
-      expect(encode(properties[i].uprn)).to.eql(properties[i].mask)
+  for (const { uprn, mask } of properties) {
+    it(`should encode uprn ${uprn} into mask ${mask}`, () => {
+      expect(encodeUPRN(uprn)).to.eql(mask)
     })
-  }
 
-  for (let i = 0; i < properties.length; i++) {
-    it(`should decode mask ${properties[i].mask} into uprn ${properties[i].uprn}`, async () => {
-      expect(decode(properties[i].mask)).to.eql(properties[i].uprn)
+    it(`should decode mask ${mask} into uprn ${uprn}`, () => {
+      expect(decodeMask(mask)).to.eql(uprn)
     })
   }
 })
