@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/wmfs/uprn-encode-decode/issues"
   },
+  "main": "./lib/index.js",
   "dependencies": {},
   "devDependencies": {
     "@semantic-release/changelog": "3.0.1",
