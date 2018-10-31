@@ -3,7 +3,10 @@
   "version": "0.0.0-semantically-released",
   "description": "A package to encode UPRNs into masking numbers, and decode them back again",
   "author": "West Midlands Fire Service",
-  "keywords": [],
+  "keywords": [
+    "tymly",
+    "package"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
