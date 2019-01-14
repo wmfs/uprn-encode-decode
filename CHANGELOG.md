@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/wmfs/uprn-encode-decode/compare/v1.1.2...v1.2.0) (2019-01-14)
+
+
+### ✨ Features
+
+* Remove package.json from uprn-encode-decode. ([50a7550](https://github.com/wmfs/uprn-encode-decode/commit/50a7550))
+
+
+### 🛠 Builds
+
+* **deps-dev:** bump [@semantic-release](https://github.com/semantic-release)/git from 7.0.5 to 7.0.6 ([#2](https://github.com/wmfs/uprn-encode-decode/issues/2)) ([845ad2b](https://github.com/wmfs/uprn-encode-decode/commit/845ad2b))
+
 ## [1.1.2](https://github.com/wmfs/uprn-encode-decode/compare/v1.1.1...v1.1.2) (2018-10-31)
 
 
