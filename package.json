@@ -18,7 +18,7 @@
   "main": "./lib/index.js",
   "dependencies": {},
   "devDependencies": {
-    "@semantic-release/changelog": "3.0.4",
+    "@semantic-release/changelog": "3.0.5",
     "@semantic-release/git": "7.0.16",
     "chai": "4.2.0",
     "codecov": "3.5.0",
