@@ -17,7 +17,9 @@ jobs:
             - v1-deps-
       - run:
           name: install
-          command: npm install
+          command: |
+            npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            npm install
       - save_cache:
           key: v1-deps-{{ checksum "package.json" }}
           paths:
@@ -39,7 +41,9 @@ jobs:
       - checkout
       - run:
           name: install standard
-          command: npm install standard
+          command: |
+            npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            npm install
       - run:
           name: lint
           command: npm run lint
