@@ -21,7 +21,6 @@
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "chai": "4.3.8",
-    "codecov": "3.8.3",
     "conventional-changelog-metahub": "4.0.1",
     "cz-conventional-changelog": "3.3.0",
     "mocha": "10.2.0",
@@ -32,7 +31,7 @@
   "scripts": {
     "lint": "standard",
     "test": "nyc mocha",
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov",
     "semantic-release": "semantic-release"
   },
   "config": {
