@@ -3,102 +3,64 @@
 
 const chai = require('chai')
 const expect = chai.expect
-const process = require('process')
-const { encodeUPRN, decodeMask } = require('../lib')
+const { encodeUPRN, decodeMask, isMaskingNumber } = require('../lib')
+// The same cases are run against the SQL functions in gazetteer-blueprint, so the two can't drift apart
+const cases = require('../lib/test-cases.json')
 
-describe('Tests the UPRN encoder', function () {
-  this.timeout(process.env.TIMEOUT || 5000)
+describe('UPRN encoder', function () {
+  describe('known properties', () => {
+    for (const { uprn, mask } of cases.valid) {
+      it(`encodes ${uprn} as ${mask}`, () => {
+        expect(encodeUPRN(uprn)).to.eql(mask)
+      })
 
-  const properties = [
-    {
-      uprn: '100070587119',
-      mask: '7M36D90J'
-    },
-    {
-      uprn: '100120581570',
-      mask: '7M4THYBQ'
-    },
-    {
-      uprn: '100031621765',
-      mask: '7M1Q7ZZM'
-    },
-    {
-      uprn: '100070438189',
-      mask: '7M36891D'
-    },
-    {
-      uprn: '100070661270',
-      mask: '7M36FW5X'
-    },
-    {
-      uprn: '100070377892',
-      mask: '7M36689B'
-    },
-    {
-      uprn: '100070529272',
-      mask: '7M36BZPX'
-    },
-    {
-      uprn: '100032225798',
-      mask: '7M1QRXRK'
-    },
-    {
-      uprn: '100031626162',
-      mask: '7M1Q7YSH'
-    },
-    {
-      uprn: '100032225166',
-      mask: '7M1QRX78'
-    },
-    {
-      uprn: '100071397718',
-      mask: '7M379FFV'
-    },
-    {
-      uprn: '10024333046',
-      mask: '4DJT71Y9'
-    },
-    {
-      uprn: '10090434308',
-      mask: '4DM7WR92'
-    },
-    {
-      uprn: '100071065698',
-      mask: '7M36TB0K'
-    },
-    {
-      uprn: '100071279199',
-      mask: '7M375G5W'
-    },
-    {
-      uprn: '100071411459',
-      mask: '7M379TP7'
-    },
-    {
-      uprn: '100032229821',
-      mask: '7M1QRN2D'
-    },
-    {
-      uprn: '100070997155',
-      mask: '7M36R1LX'
-    },
-    {
-      uprn: '10003691644',
-      mask: '4DJ6R5BJ'
-    },
-    {
-      uprn: '100031688993',
-      mask: '7M1Q9X9B'
+      it(`decodes ${mask} as ${uprn}`, () => {
+        expect(decodeMask(mask)).to.eql(uprn)
+      })
     }
-  ]
+  })
 
-  for (const { uprn, mask } of properties) {
-    it(`should encode uprn ${uprn} into mask ${mask}`, () => {
-      expect(encodeUPRN(uprn)).to.eql(mask)
-    })
+  describe('encoding', () => {
+    for (const { input, expected, why } of cases.encode) {
+      it(`${why}: ${JSON.stringify(input)} -> ${JSON.stringify(expected)}`, () => {
+        expect(encodeUPRN(input)).to.eql(expected)
+      })
+    }
 
-    it(`should decode mask ${mask} into uprn ${uprn}`, () => {
-      expect(decodeMask(mask)).to.eql(uprn)
+    it('undefined -> null', () => {
+      expect(encodeUPRN(undefined)).to.eql(null)
     })
-  }
+  })
+
+  describe('decoding', () => {
+    for (const { input, expected, why } of cases.decode) {
+      it(`${why}: ${JSON.stringify(input)} -> ${JSON.stringify(expected)}`, () => {
+        expect(decodeMask(input)).to.eql(expected)
+      })
+    }
+  })
+
+  describe('round trip', () => {
+    it('every mask decodes back to its UPRN', () => {
+      for (let i = 0; i < 20000; i++) {
+        const uprn = String(1 + Math.floor(Math.random() * 999999999999))
+        expect(decodeMask(encodeUPRN(uprn)), uprn).to.eql(uprn)
+      }
+    })
+  })
+
+  describe('isMaskingNumber', () => {
+    for (const text of ['7M36CJNX', '7m36 cjnx', '7M36D9OJ']) {
+      it(`${text} is a masking number`, () => {
+        expect(isMaskingNumber(text)).to.eql(true)
+      })
+    }
+
+    // short words and postcodes decode to less than 1, so they're never mistaken for a mask
+    for (const text of ['smith', 'WS90TD', 'B66NU', '100070567650', 'FSC493/2024', '']) {
+      it(`${text} is not a masking number`, () => {
+        expect(isMaskingNumber(text)).to.eql(false)
+      })
+    }
+  })
 })
