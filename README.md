@@ -4,9 +4,9 @@ Encodes UPRNs into masking numbers, and decodes masking numbers back into UPRNs.
 ```js
 const { encodeUPRN, decodeMask, isMaskingNumber } = require('@wmfs/uprn-encode-decode')
 
-encodeUPRN(100070567650) // '7M36CJNX'
-decodeMask('7m36 cjnx') // '100070567650'
-isMaskingNumber('7M36CJNX') // true
+encodeUPRN(90012345678) // '7ZNR7DM9'
+decodeMask('7znr 7dm9') // '90012345678'
+isMaskingNumber('7ZNR7DM9') // true
 ```
 
 - **`encodeUPRN(uprn)`** returns `null` for anything that isn't a valid UPRN: missing, 0, negative, not a whole number, or more than 12 digits.

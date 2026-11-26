@@ -50,14 +50,14 @@ describe('UPRN encoder', function () {
   })
 
   describe('isMaskingNumber', () => {
-    for (const text of ['7M36CJNX', '7m36 cjnx', '7M36D9OJ']) {
+    for (const text of ['7ZNR7DM9', '7znr 7dm9', '7DGR55OV']) {
       it(`${text} is a masking number`, () => {
         expect(isMaskingNumber(text)).to.eql(true)
       })
     }
 
     // short words and postcodes decode to less than 1, so they're never mistaken for a mask
-    for (const text of ['smith', 'WS90TD', 'B66NU', '100070567650', 'FSC493/2024', '']) {
+    for (const text of ['smith', 'ZZ90TD', 'ZZ66NU', '90012345678', 'ABC493/2024', '']) {
       it(`${text} is not a masking number`, () => {
         expect(isMaskingNumber(text)).to.eql(false)
       })
