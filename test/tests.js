@@ -11,84 +11,84 @@ describe('Tests the UPRN encoder', function () {
 
   const properties = [
     {
-      uprn: '100070587119',
-      mask: '7M36D90J'
+      uprn: '92474384733',
+      mask: '7DGR550V'
     },
     {
-      uprn: '100120581570',
-      mask: '7M4THYBQ'
+      uprn: '96174563388',
+      mask: '7HM3NN0N'
     },
     {
-      uprn: '100031621765',
-      mask: '7M1Q7ZZM'
+      uprn: '98382749801',
+      mask: '7K67PZKG'
     },
     {
-      uprn: '100070438189',
-      mask: '7M36891D'
+      uprn: '91470135144',
+      mask: '7CCWNZ7T'
     },
     {
-      uprn: '100070661270',
-      mask: '7M36FW5X'
+      uprn: '96758256084',
+      mask: '7XBFWKHC'
     },
     {
-      uprn: '100070377892',
-      mask: '7M36689B'
+      uprn: '91088460575',
+      mask: '7BVYYX92'
     },
     {
-      uprn: '100070529272',
-      mask: '7M36BZPX'
+      uprn: '90539024387',
+      mask: '7BB8GHF2'
     },
     {
-      uprn: '100032225798',
-      mask: '7M1QRXRK'
+      uprn: '98469101408',
+      mask: '7K989SK7'
     },
     {
-      uprn: '100031626162',
-      mask: '7M1Q7YSH'
+      uprn: '90821972019',
+      mask: '7BL4S9S1'
     },
     {
-      uprn: '100032225166',
-      mask: '7M1QRX78'
+      uprn: '97639984363',
+      mask: '7JB9GWW3'
     },
     {
-      uprn: '100071397718',
-      mask: '7M379FFV'
+      uprn: '96795725891',
+      mask: '7XCPBCVQ'
     },
     {
-      uprn: '10024333046',
-      mask: '4DJT71Y9'
+      uprn: '98628334283',
+      mask: '7KYPMSJX'
     },
     {
-      uprn: '10090434308',
-      mask: '4DM7WR92'
+      uprn: '94768674605',
+      mask: '7G40Y0DL'
     },
     {
-      uprn: '100071065698',
-      mask: '7M36TB0K'
+      uprn: '94631097078',
+      mask: '7FV6YSJT'
     },
     {
-      uprn: '100071279199',
-      mask: '7M375G5W'
+      uprn: '91170428066',
+      mask: '7C2Z707L'
     },
     {
-      uprn: '100071411459',
-      mask: '7M379TP7'
+      uprn: '93457568450',
+      mask: '7YK6NR0N'
     },
     {
-      uprn: '100032229821',
-      mask: '7M1QRN2D'
+      uprn: '92529841195',
+      mask: '7DXP6L23'
     },
     {
-      uprn: '100070997155',
-      mask: '7M36R1LX'
+      uprn: '91991200146',
+      mask: '7CVVV0FC'
     },
     {
-      uprn: '10003691644',
-      mask: '4DJ6R5BJ'
+      uprn: '99305929206',
+      mask: '7L7FDR6Z'
     },
     {
-      uprn: '100031688993',
-      mask: '7M1Q9X9B'
+      uprn: '99968965448',
+      mask: '7LVKC486'
     }
   ]
 
